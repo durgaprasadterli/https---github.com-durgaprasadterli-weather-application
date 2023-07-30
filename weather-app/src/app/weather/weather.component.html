@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Weather App</h1>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Enter location" [(ngModel)]="location">
+      <button class="btn btn-primary" (click)="getWeather()">Search</button>
+    </div>
+  
+    <div *ngIf="weatherData" class="mt-4">
+      <h2>{{ weatherData.name }}</h2>
+      <p><strong>Weather:</strong> {{ weatherData.weather[0].description }}</p>
+      <p><strong>Temperature:</strong> {{ weatherData.main.temp }}°C</p>
+      <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
+    </div>
+  </div>
+  
